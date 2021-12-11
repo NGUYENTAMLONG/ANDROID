@@ -1,6 +1,6 @@
 const renderTopicsDiv = document.querySelector(".renderTopics");
 
-fetch("http://localhost:3333/api/question/")
+fetch("https://onlinequiz-app-ver1.herokuapp.com/api/question/")
   .then((res) => res.json())
   .then((data) => {
     console.log(data);

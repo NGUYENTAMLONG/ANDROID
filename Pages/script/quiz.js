@@ -69,7 +69,7 @@ function renderQuestions(questions) {
   bodyQuestions.innerHTML = htmls.join("");
 }
 
-fetch("http://localhost:3333/api/question/" + topic)
+fetch("https://onlinequiz-app-ver1.herokuapp.com/api/question/" + topic)
   .then((res) => res.json())
   .then((data) => {
     console.log(data);
@@ -106,7 +106,7 @@ fetch("http://localhost:3333/api/question/" + topic)
   .catch((error) => console.log(error));
 // Hàm thực thi kiểm tra
 function Testing(array) {
-  fetch("http://localhost:3333/api/question/" + topic)
+  fetch("https://onlinequiz-app-ver1.herokuapp.com/api/question/" + topic)
     .then((res) => res.json())
     .then((data) => {
       let quantity = array.length;
@@ -241,12 +241,16 @@ function goHomeOrChangeTopic() {
         "You have not finished your quiz ? Are you sure you want to go back to the homepage?"
       )
     ) {
-      window.location.replace("http://127.0.0.1:5500/Pages/index.html");
+      window.location.replace(
+        "https://nguyentamlong.github.io/ANDROID/Pages/index.html"
+      );
     } else {
       return;
     }
   } else {
-    window.location.replace("http://127.0.0.1:5500/Pages/index.html");
+    window.location.replace(
+      "https://nguyentamlong.github.io/ANDROID/Pages/index.html"
+    );
   }
 }
 // ************************

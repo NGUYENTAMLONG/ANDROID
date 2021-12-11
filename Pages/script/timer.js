@@ -80,7 +80,7 @@ function endQuiz() {
   });
   //   console.log("TAMLONG ARRAY:", array);
   //   console.log("TAM LONG ARRAY FORM CHECKED:", formChecked);
-  fetch("http://localhost:3333/api/question/" + topic)
+  fetch("https://onlinequiz-app-ver1.herokuapp.com/api/question/" + topic)
     .then((res) => res.json())
     .then((data) => {
       let correctResults = [];

@@ -40,7 +40,7 @@ h3 {
   position: relative;
   width: 300px;
   height: 400px;
-  background-image: url("./img/paper.png");
+  background-image: url("../img/paper.png");
   background-size: 300px 400px;
   background-repeat: no-repeat;
   background-position: center;
