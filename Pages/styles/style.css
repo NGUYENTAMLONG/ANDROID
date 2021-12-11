@@ -1,0 +1,89 @@
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  margin: 0;
+}
+header,
+.body {
+  margin-bottom: 100px;
+}
+#logo {
+  position: relative;
+  background-color: seagreen;
+  padding: 0px 10px;
+  border-radius: 4px;
+  font-family: "Pacifico", cursive;
+}
+.fa-graduation-cap {
+  position: absolute;
+  top: -5px;
+  right: -10px;
+  transform: rotate(40deg);
+}
+
+.body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+h2,
+h3 {
+  font-family: "Pacifico", cursive;
+}
+.body input[type="radio"],
+.body label {
+  cursor: pointer;
+}
+.renderTopics {
+  position: relative;
+  width: 300px;
+  height: 400px;
+  background-image: url("./img/paper.png");
+  background-size: 300px 400px;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.renderTopics::before {
+  position: absolute;
+  top: 100px;
+  content: "TOPIC";
+  font-weight: bold;
+  font-size: 23px;
+}
+
+.renderTopics .form-check {
+  width: 100px;
+  word-break: break-all;
+}
+.control {
+  width: 100%;
+  text-align: center;
+}
+.btnStart {
+  position: relative;
+  width: 100px;
+  font-weight: bold;
+  margin-top: 20px;
+}
+.fa-rocket {
+  position: absolute;
+  top: 50px;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  color: #ffc107;
+  transform: rotate(-45deg);
+  transition: 0.3s ease-in-out;
+  opacity: 0;
+}
+.btnStart:hover .fa-rocket {
+  top: -20px;
+  opacity: 1;
+}
