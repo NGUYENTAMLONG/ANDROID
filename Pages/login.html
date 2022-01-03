@@ -33,7 +33,7 @@
     <h1 class="text-center text-light">Login</h1>
     <div class="row">
       <div class="col-lg-3"></div>
-      <form class="text-light col-lg-6" action="http://localhost:3333/api/user/login" method="POST">
+      <form class="text-light col-lg-6" action="https://onlinequiz-app-ver1.herokuapp.com/api/user/login" method="POST">
         <div class="d-flex flex-column">
           <div class="form-group">
             <label for="email"><i class="fas fa-at"></i> Email address</label>
@@ -74,7 +74,7 @@
       email: email.value,
       password: password.value
     }
-    fetch("http://localhost:3333/api/user/login", {
+    fetch("https://onlinequiz-app-ver1.herokuapp.com/api/user/login", {
       method: 'POST', // *GET, POST, PUT, DELETE, etc.
       headers: {
         'Content-Type': 'application/json',
