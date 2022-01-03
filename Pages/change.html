@@ -78,10 +78,8 @@
       },
       body: JSON.stringify(bodyChanging) // body data type must match "Content-Type" header
     }).then((res) => res.json()).then(data => {
-      console.log(data)
-      // if (data.result === true) {
-
-      // } else {}
+      alert(data.success);
+      window.location = "https://nguyentamlong.github.io/ANDROID/Pages/login.html";
     }).catch(error => console.log(error))
   }
 </script>
