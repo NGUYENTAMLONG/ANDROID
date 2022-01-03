@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register OnlineQuiz</title>
+  <!-- Link bootstrap 4 -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <!-- Link fontawesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    form {
+      padding: 10px;
+      background-color: #0d1117b6;
+      border-radius: 5px;
+    }
+
+    body {
+      margin-top: 100px;
+      background-image: url("img/space.jpg");
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1 class="text-center text-light">Login</h1>
+    <div class="row">
+      <div class="col-lg-3"></div>
+      <form class="text-light col-lg-6" action="http://localhost:3333/api/user/login" method="POST">
+        <div class="d-flex flex-column">
+          <div class="form-group">
+            <label for="email"><i class="fas fa-at"></i> Email address</label>
+            <input type="email" class="form-control" name="email" id="email" aria-describedby="emailHelp" placeholder="Enter email" required>
+            <div class="error text-danger"></div>
+          </div>
+          <div class="form-group">
+            <label for="password"><i class="fas fa-key"></i> Password</label>
+            <input type="password" class="form-control" name="password" id="password" placeholder="Password" required>
+            <div class="error text-danger"></div>
+          </div>
+          <button type="submit" class="btn btn-success"><i class="fas fa-sign-in-alt"></i> Login</button>
+          <div class="to_register text-center mt-2">
+            Bạn mới biết đến OnlineQuiz?
+            <a href="register.html"><b> Đăng ký</b></a>
+          </div>
+          <div class="forget_account text-center mt-2">
+            Quên mật khẩu?
+            <a href="recover.html"><b> Tìm lại</b></a>
+          </div>
+        </div>
+      </form>
+      <div class="col-lg-3"></div>
+    </div>
+  </div>
+</body>
+<script>
+  const errorDivE = document.querySelectorAll(".error")[0];
+  const errorDivP = document.querySelectorAll(".error")[1];
+
+  window.onsubmit = function(e) {
+    e.preventDefault();
+    const email = document.querySelector("input[name='email']");
+    const password = document.querySelector("input[name='password']");
+    errorDivE.innerHTML = "";
+    errorDivP.innerHTML = "";
+    const bodyLogin = {
+      email: email.value,
+      password: password.value
+    }
+    fetch("http://localhost:3333/api/user/login", {
+      method: 'POST', // *GET, POST, PUT, DELETE, etc.
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(bodyLogin) // body data type must match "Content-Type" header
+    }).then((res) => res.json()).then(data => {
+      if (data.result === false) {
+        if (data.at === "email") {
+          errorDivE.innerHTML = "* Email is wrong or does not exist !"
+        } else {
+          errorDivP.innerHTML = "* Password is wrong !"
+        }
+      } else {
+        window.location = data.url
+      }
+    }).catch(error => console.log(error))
+  }
+</script>
+
+</html>

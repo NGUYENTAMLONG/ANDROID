@@ -1,103 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Online Quiz</title>
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-    />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <!-- Link fontawesome -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-      integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <!-- Link css -->
-    <link rel="stylesheet" href="styles/style.css" />
-    <link rel="stylesheet" href="styles/quiz.css" />
-  </head>
-  <body>
-    <!-- header -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <a class="navbar-brand" href="#" id="logo"
-        >Online Quiz
-        <i class="fas fa-graduation-cap"></i>
-      </a>
 
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Online Quiz</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <!-- Link fontawesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- Link css -->
+  <link rel="stylesheet" href="styles/style.css" />
+  <link rel="stylesheet" href="styles/quiz.css" />
+</head>
 
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="#">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">About</a>
-          </li>
-        </ul>
-        <form class="form-inline my-2 my-lg-0">
-          <input
-            class="form-control mr-sm-2"
-            type="search"
-            placeholder="Search"
-            aria-label="Search"
-          />
+<body>
+  <!-- header -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#" id="logo">Online Quiz
+      <i class="fas fa-graduation-cap"></i>
+    </a>
 
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
-            Search
-          </button>
-        </form>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">About</a>
+        </li>
+      </ul>
+      <!-- *************** -->
+      <div class="user bg-info rounded mr-2 text-light p-1">
+        <i class="fa fa-user-circle pl-1" aria-hidden="true"></i>
+        <b class="username text-light pr-2"></b>
+        <div class="hoverUser bg-dark rounded ">
+          <ul>
+            <li>
+              <a href="index.html" class="text-light"><i class="fas fa-sign-out-alt"></i> Log Out</a>
+            </li>
+            <hr style="background-color: white;">
+            <li>
+              <a href="#" class="text-light">My Account</a>
+            </li>
+          </ul>
+        </div>
       </div>
-      <div class="timeLeft text-light">
-        Done <b id="done"></b> | Time left = <span id="timer"></span>
-      </div>
-    </nav>
-    <!-- ************** -->
-    <!-- body -->
-    <div class="body">
-      <h2 class="body__title">Wishing you all the best for your exams</h2>
+      <!-- *************** -->
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
 
-      <div class="handle d-flex">
-        <select
-          class="form-control form-select form-select-lg mb-3 m-2"
-          aria-label=".form-select-lg example"
-          style="width: 150px"
-        >
-          <option selected>Choose time</option>
-          <option value="it">Infinite time</option>
-          <option value="1">1 minutes</option>
-          <option value="15">15 minutes</option>
-          <option value="30">30 minutes</option>
-          <option value="45">45 minutes</option>
-          <option value="60">60 minutes</option>
-        </select>
-        <h3 class="body__topic bg-success text-white p-2 rounded"></h3>
-        <button class="btn btn-outline-warning m-2 changeTopic">
-          Change Topic
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+          Search
         </button>
-      </div>
-      <button class="btn btn-primary btnStart">Start</button>
+      </form>
+    </div>
+    <div class="timeLeft text-light">
+      Done <b id="done"></b> | Time left = <span id="timer"></span>
+    </div>
+  </nav>
+  <!-- ************** -->
+  <!-- body -->
+  <div class="body">
+    <h2 class="body__title">Wishing you all the best for your exams</h2>
 
-      <div class="body__questions d-none">
-        <!-- <div class="body__questions-item">
+    <div class="handle d-flex">
+      <select class="form-control form-select form-select-lg mb-3 m-2" aria-label=".form-select-lg example" style="width: 150px">
+        <option selected>Choose time</option>
+        <option value="it">Infinite time</option>
+        <option value="1">1 minutes</option>
+        <option value="15">15 minutes</option>
+        <option value="30">30 minutes</option>
+        <option value="45">45 minutes</option>
+        <option value="60">60 minutes</option>
+      </select>
+      <h3 class="body__topic bg-success text-white p-2 rounded"></h3>
+      <button class="btn btn-outline-warning m-2 changeTopic">
+        Change Topic
+      </button>
+    </div>
+    <button class="btn btn-primary btnStart">Start</button>
+
+    <div class="body__questions d-none">
+      <!-- <div class="body__questions-item">
           <b class="body__questions__name"><span>1 </span>what is your name?</b>
           <div class="body__answer">
             <input type="radio" id="a" name="answer" value="ten ban la gi ?" />
@@ -131,21 +123,22 @@
             <label for="d">ten cua bo ban la gi?</label><br />
           </div>
         </div> -->
-      </div>
+    </div>
 
-      <button class="btn btn-primary btnSubmit d-none">
-        Submit <i class="fas fa-paper-plane"></i>
-      </button>
-    </div>
-    <!-- End body -->
-    <div include-html="footer.html" id="footer"></div>
-    <div class="move">
-      <i class="fas fa-2x fa-arrow-alt-circle-up"></i>
-      <i class="fas fa-2x fa-arrow-alt-circle-down"></i>
-    </div>
-  </body>
-  <script src="script/include-html.min.js"></script>
-  <script src="script/jquery-3.6.0.min.js"></script>
-  <script src="script/timer.js"></script>
-  <script src="script/quiz.js"></script>
+    <button class="btn btn-primary btnSubmit d-none">
+      Submit <i class="fas fa-paper-plane"></i>
+    </button>
+  </div>
+  <!-- End body -->
+  <div include-html="footer.html" id="footer"></div>
+  <div class="move">
+    <i class="fas fa-2x fa-arrow-alt-circle-up"></i>
+    <i class="fas fa-2x fa-arrow-alt-circle-down"></i>
+  </div>
+</body>
+<script src="script/include-html.min.js"></script>
+<script src="script/jquery-3.6.0.min.js"></script>
+<script src="script/timer.js"></script>
+<script src="script/quiz.js"></script>
+
 </html>

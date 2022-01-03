@@ -1,0 +1,31 @@
+GET http://localhost:3333/api/user
+###
+POST http://localhost:3333/api/user 
+content-type: application/json
+
+{
+     "username": "nguyenvananh",
+    "password": "va123",
+    "email": "vana@gmail.com",
+    "phonenumber": "514325362"
+}
+###
+PUT http://localhost:3333/api/user/61cbd34a31f12495ef3f6037
+content-type: application/json
+
+{
+    "username": "nguyenvananhtu",
+    "password": "vananh",
+    "email": "vana@gmail.com",
+    "phonenumber": "514322131"
+}
+###
+DELETE  http://localhost:3333/api/user/61cbc3ff906c53403c535871
+###
+POST http://localhost:3333/api/user/login
+content-type: application/json
+
+{
+    "email": "vana@gmail.com",
+    "password": "va123"
+}

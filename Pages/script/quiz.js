@@ -9,6 +9,20 @@ const logo = document.querySelector("#logo");
 const retryBtn = document.querySelector(".retryBtn");
 const changeTopicBtn = document.querySelector(".changeTopic");
 bodyTopic.innerHTML = `Topic : ${topic}`;
+//render username to header
+const tagUsername = document.querySelector(".username");
+const userName = localStorage.getItem("username");
+// console.log(userName === "undefined");
+if (userName !== "undefined") {
+  tagUsername.innerHTML = userName;
+} else {
+  let text = "You must login with your account !";
+  if (confirm(text) == true) {
+    location.assign("http://127.0.0.1:5501/Pages/login.html");
+  } else {
+    location.assign("http://127.0.0.1:5501/Pages/index.html");
+  }
+}
 
 //  Ham render cac cau hoi
 function renderQuestions(questions) {

@@ -5,14 +5,18 @@
   "main": "index.js",
   "scripts": {
     "start": "node server",
+    "devStart": "nodemon server",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "bcrypt": "^5.0.1",
+    "body-parser": "^1.19.1",
     "cors": "^2.8.5",
     "express": "^4.17.1",
-    "mongoose": "^6.0.15"
+    "mongoose": "^6.0.15",
+    "nodemailer": "^6.7.2"
   },
   "devDependencies": {
     "nodemon": "^2.0.15"

@@ -87,3 +87,39 @@ h3 {
   top: -20px;
   opacity: 1;
 }
+.user {
+  position: relative;
+}
+.hoverUser {
+  width: 100px;
+  position: absolute;
+  top: 31px;
+  padding: 7px;
+  display: none;
+}
+.user:hover .hoverUser {
+  display: block;
+}
+.hoverUser ul {
+  list-style: none;
+}
+.hoverUser ul li a {
+  text-decoration: none;
+}
+@media (max-width: 992px) {
+  .user {
+    text-align: center;
+    width: 50%;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    border-top-left-radius: 20px !important;
+    border-top-right-radius: 20px !important;
+  }
+  .hoverUser {
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

@@ -2,7 +2,13 @@ const express = require("express");
 
 const app = express();
 
+// const bodyParser = require("body-parser");
+// c1:
+app.use(express.urlencoded({ extended: true }));
+// c2:
+// app.use(bodyParser.urlencoded({ limit: "10mb", extended: false }));
 // BodyParser Middleware
+
 app.use(express.json());
 const PORT = process.env.PORT || 3333;
 // MongoDB (database)
@@ -23,8 +29,10 @@ var cors = require("cors");
 app.use(cors());
 // *********************
 const questionRoutes = require("./routes/question");
+const userRoutes = require("./routes/user");
 const pagingRoutes = require("./routes/paging");
 
+app.use("/api/user", userRoutes);
 app.use("/api/question", questionRoutes);
 app.use("/api/paging", pagingRoutes);
 
