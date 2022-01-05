@@ -2,7 +2,7 @@ const renderTopicsDiv = document.querySelector(".renderTopics");
 const tagUsername = document.querySelector(".username");
 const userName = window.location.href.split("user=")[1];
 const divUser = document.querySelector(".user");
-console.log(typeof userName);
+const logo = document.querySelector("#logo");
 if (typeof userName === "undefined") {
   divUser.innerHTML = `
   <a href="login.html" class="text-light" style="text-decoration:none"><i class="fa fa-sign-in" aria-hidden="true"></i> Đăng Nhập </a>
@@ -57,4 +57,8 @@ btnStart.addEventListener("click", function (e) {
       console.log(item.value);
     }
   });
+});
+// Ham back to home page
+logo.addEventListener("click", () => {
+  location.reload();
 });
