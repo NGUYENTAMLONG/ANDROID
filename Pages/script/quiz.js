@@ -256,12 +256,16 @@ function goHomeOrChangeTopic() {
       )
     ) {
       // "https://nguyentamlong.github.io/ANDROID/Pages/index.html"
-      window.location = `https://nguyentamlong.github.io/ANDROID/Pages/index.html?user=${loginUser.username}`;
+      window.location = `https://nguyentamlong.github.io/ANDROID/Pages/index.html?user=${localStorage.getItem(
+        "username"
+      )}`;
     } else {
       return;
     }
   } else {
-    window.location = `https://nguyentamlong.github.io/ANDROID/Pages/index.html?user=${loginUser.username}`;
+    window.location = `https://nguyentamlong.github.io/ANDROID/Pages/index.html?user=${localStorage.getItem(
+      "username"
+    )}`;
   }
 }
 // ************************
