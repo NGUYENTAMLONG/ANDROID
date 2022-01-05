@@ -255,16 +255,13 @@ function goHomeOrChangeTopic() {
         "You have not finished your quiz ? Are you sure you want to go back to the homepage?"
       )
     ) {
-      window.location.replace(
-        "https://nguyentamlong.github.io/ANDROID/Pages/index.html"
-      );
+      // "https://nguyentamlong.github.io/ANDROID/Pages/index.html"
+      window.location = `https://nguyentamlong.github.io/ANDROID/Pages/index.html?user=${loginUser.username}`;
     } else {
       return;
     }
   } else {
-    window.location.replace(
-      "https://nguyentamlong.github.io/ANDROID/Pages/index.html"
-    );
+    window.location = `https://nguyentamlong.github.io/ANDROID/Pages/index.html?user=${loginUser.username}`;
   }
 }
 // ************************

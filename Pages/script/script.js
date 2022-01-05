@@ -44,7 +44,9 @@ btnStart.addEventListener("click", function (e) {
     let text = "You must login with your account !";
     e.preventDefault();
     if (confirm(text) == true) {
-      location.assign("http://127.0.0.1:5501/Pages/login.html");
+      location.assign(
+        "https://nguyentamlong.github.io/ANDROID/Pages/login.html"
+      );
     } else {
       return;
     }
